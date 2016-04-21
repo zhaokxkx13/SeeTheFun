@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - seethefun@localhost" uuid="0e9a8bbf-b795-4fba-bce7-8b31f74e5fa8">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>seethefun.*</schema-pattern>
+      <default-schemas>seethefun.*</default-schemas>
+    </data-source>
+  </component>
+</project>

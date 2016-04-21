@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - seethefun@localhost" uuid="0e9a8bbf-b795-4fba-bce7-8b31f74e5fa8">
+    <database-info product="MySQL" version="5.0.22-community-nt" jdbc-version="3.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-3.1.13 ( $Date: 2005-11-17 15:53:48 +0100 (Thu, 17 Nov 2005) $, $Revision$ )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="seethefun"/>
+    <table name="chattingrecord" schema="" catalog="seethefun" type="TABLE">
+      <column name="id" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <column name="content" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="time" sqlType="datetime" precision="19" scale="0" nullable="false" jdbcType="93" def="Jyc="/>
+      <column name="sendChattingRecords" sqlType="int" precision="11" scale="0" nullable="true" jdbcType="4"/>
+      <column name="toWhom_id" sqlType="int" precision="11" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_hmr6bg3ri942vmw56gf1iq94k" columns="toWhom_id" ref-table="user" ref-schema="" ref-catalog="seethefun" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_2ml1vflftxranlowj0ikt2h9p" columns="sendChattingRecords" ref-table="user" ref-schema="" ref-catalog="seethefun" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="manager" schema="" catalog="seethefun" type="TABLE">
+      <column name="id" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <column name="email" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="name" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="password" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="priviledge" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <column name="telephone" sqlType="varchar" precision="30" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="operationrecord" schema="" catalog="seethefun" type="TABLE">
+      <column name="id" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <column name="operationDate" sqlType="int" precision="11" scale="0" nullable="true" jdbcType="4"/>
+      <column name="operationType" sqlType="int" precision="11" scale="0" nullable="true" jdbcType="4"/>
+      <column name="operationRecordList" sqlType="int" precision="11" scale="0" nullable="true" jdbcType="4"/>
+      <column name="operationRecords" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_9m7yp8nqtflx2m0ccfxtmmima" columns="operationRecordList" ref-table="manager" ref-schema="" ref-catalog="seethefun" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="remark" schema="" catalog="seethefun" type="TABLE">
+      <column name="id" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <column name="content" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="date" sqlType="datetime" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="dislikes" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <column name="likes" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_8qet68hc7qwruyj90onre4b59" columns="id" ref-table="user" ref-schema="" ref-catalog="seethefun" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="tendency" schema="" catalog="seethefun" type="TABLE">
+      <column name="id" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <column name="englishName" sqlType="varchar" precision="30" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="name" sqlType="varchar" precision="30" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="topic" schema="" catalog="seethefun" type="TABLE">
+      <column name="id" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <column name="audio_url" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="category" sqlType="varchar" precision="20" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="concerns" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dislikesTimes" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <column name="lastRemarkTime" sqlType="datetime" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="likesTimes" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="varchar" precision="40" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="picture_url" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="remarkTimes" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <column name="shareTimes" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <column name="state" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="submitDate" sqlType="date" precision="10" scale="0" nullable="false" jdbcType="91" def="Jyc="/>
+      <column name="summarization" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="video_url" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="myTopic" sqlType="int" precision="11" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_rvowvrp3bjnm8bvnrdo8l898h" columns="myTopic" ref-table="user" ref-schema="" ref-catalog="seethefun" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_lg56ocwsyi1wm2lehim6nlhva" columns="id" ref-table="user" ref-schema="" ref-catalog="seethefun" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="user" schema="" catalog="seethefun" type="TABLE">
+      <column name="id" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <column name="birthday" sqlType="date" precision="10" scale="0" nullable="false" jdbcType="91" def="Jyc="/>
+      <column name="email" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="gender" sqlType="varchar" precision="6" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="name" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="password" sqlType="varchar" precision="16" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="telephone" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="user_friend" schema="" catalog="seethefun" type="TABLE">
+      <column name="user1" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <column name="user2" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="FK_klu8yg9tokau313imwg6lwtdc" columns="user1" ref-table="user" ref-schema="" ref-catalog="seethefun" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_a5te3lluvq76eg3ml66x4psxl" columns="user2" ref-table="user" ref-schema="" ref-catalog="seethefun" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="user_tendency" schema="" catalog="seethefun" type="TABLE">
+      <column name="users_id" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <column name="tendencies_id" sqlType="int" precision="11" scale="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="FK_kw41ct8j3q38jrtyeetgk8r1s" columns="users_id" ref-table="user" ref-schema="" ref-catalog="seethefun" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_hoge0kg28wgqctj3rq2hfdx4d" columns="tendencies_id" ref-table="tendency" ref-schema="" ref-catalog="seethefun" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+  </data-source>
+</component>

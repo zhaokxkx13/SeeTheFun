@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="ehcache-2.10.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/ehcache-2.10.1.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/hibernate-ehcache-4.0.0.CR6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
